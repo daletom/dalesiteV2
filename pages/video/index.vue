@@ -1,38 +1,27 @@
 <template>
   <section class="container">
-    <div
-      v-video-player:myVideoPlayer="playerOptions"
-      class="video-player-box"
-      :playsinline="playsinline"
-      @play="onPlayerPlay($event)"
-      @pause="onPlayerPause($event)"
-      @ended="onPlayerEnded($event)"
-      @loadeddata="onPlayerLoadeddata($event)"
-      @waiting="onPlayerWaiting($event)"
-      @playing="onPlayerPlaying($event)"
-      @timeupdate="onPlayerTimeupdate($event)"
-      @canplay="onPlayerCanplay($event)"
-      @canplaythrough="onPlayerCanplaythrough($event)"
-      @ready="playerReadied"
-      @statechanged="playerStateChanged($event)"
-    ></div>
+    <div class="video-player-box">
+      <video-player :options="videoOptions" />
+    </div>
   </section>
 </template>
 
 <script>
+import VideoPlayer from "@/components/VideoPlayer.vue";
+
 export default {
+  components: {
+    VideoPlayer,
+  },
   data() {
     return {
-      playsinline: true,
-      playerOptions: {
-        muted: false,
+      videoOptions: {
+        autoplay: true,
         controls: true,
-        language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
         sources: [
           {
             src:
-              "https://stream.mux.com/VFfLJN8cFMvKAihpIjQhMt00bJtZoZiOO.m3u8",
+              "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8",
               type: "application/xmpegURL"
           }
         ]
@@ -40,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    // console.log('this is current player instance object', this.myVideoPlayer)
+    console.log('this is current player instance object', this.myVideoPlayer)
   },
   methods: {
     onPlayerPlay(player) {
@@ -71,10 +60,10 @@ export default {
       // console.log('player Canplaythrough!', player)
     },
     playerStateChanged(playerCurrentState) {
-      // console.log('player current update state', playerCurrentState)
+      console.log('player current update state', playerCurrentState)
     },
     playerReadied(player) {
-      // console.log('example 01: the player is readied', player)
+      console.log('example 01: the player is readied', player)
     }
   }
 }
