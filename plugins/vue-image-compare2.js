@@ -7,8 +7,8 @@ new Vue ({
     },
     data() {
         return {
-            before: 'https://tom.imgix.net/living1before.jpg?w=1000&h=1000&fit=crop&auto=format%2Ccompress',
-            after: 'https://tom.imgix.net/living1after.jpg?w=1000&h=1000&fit=crop&auto=format%2Ccompress'
+            before: 'https://tom.imgix.net/cc/living1before.jpg?w=1000&h=1000&fit=crop&auto=format%2Ccompress',
+            after: 'https://tom.imgix.net/cc/living1after.jpg?w=1000&h=1000&fit=crop&auto=format%2Ccompress'
           }
     }
 })
