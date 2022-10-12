@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@videojs/http-streaming": "^1.13.3",
+    "@videojs/http-streaming": "^2.15.0",
     "mdbvue": "^6.7.1",
     "nuxt": "^2.0.0",
     "video.js": "^7.0.3",
